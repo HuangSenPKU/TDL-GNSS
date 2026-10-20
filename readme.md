@@ -1,6 +1,6 @@
 # TDL-GNSS
 
-> **PedROAM integration (this fork):** See [pedroam/README.md](pedroam/README.md) for full-dataset GNSS preprocessing, frozen official three-input `HybridShareNet` inference, and separate scoring. No training or fine-tuning; original upstream source files below are preserved. This is not the default nine-input model or an exact paper-results reproduction.
+> **PedROAM support:** This fork adds preprocessing, pretrained `HybridShareNet` inference, and per-recording evaluation for PedROAM. See [pedroam/README.md](pedroam/README.md) for setup, commands, and results.
 
 
 ## News
