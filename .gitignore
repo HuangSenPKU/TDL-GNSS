@@ -1,0 +1,15 @@
+# Local data, outputs, virtual environments and downloaded checkpoints.
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/
+PedROAM/
+output/
+outputs/
+runs/
+result/
+checkpoints/
+*.pkl
+*.pth
+*.pt
