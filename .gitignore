@@ -9,6 +9,7 @@ output/
 outputs/
 runs/
 result/
+results/
 checkpoints/
 *.pkl
 *.pth
