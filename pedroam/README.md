@@ -1,5 +1,7 @@
 # 在 PedROAM 上运行 TDL-GNSS
 
+论文写作所需的完整配置、实现细节、逐路结果、复现命令和结论边界见 [实验配置与论文写作参考](TDL_GNSS_EXPERIMENT_DETAILS.md)。
+
 我们为 [TDL-GNSS](https://github.com/ebhrz/TDL-GNSS) 增加了 PedROAM 数据接口：读取手机 GNSS 观测和广播星历，完成预处理、定位和参考轨迹评分。默认运行数据目录中的全部记录，每个历元都参与处理。
 
 使用当前代码中的三维输入网络 `HybridShareNet`，加载作者在 `deprecated-main` 分支发布的 `hybrid_share.pth`。输入为载噪比、卫星仰角和初始定位残差，网络输出伪距修正量及观测权重，再由 TASGNSS 加权最小二乘解算位置。模型直接使用预训练参数和归一化统计量。
