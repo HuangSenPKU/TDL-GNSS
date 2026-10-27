@@ -1,6 +1,12 @@
 # 在 PedROAM 上运行 TDL-GNSS
 
+本地从头训练的过程、mean 等完整结果与直接测试命令见 [训练与测试总结](TRAINING_AND_RESULTS.md)。当前机器可运行 `bash pedroam/test_model.sh`，默认将新测试结果保存到代码仓库的 `pedroam/results/`；可用 `--output-root` 指定其他结果目录。
+
 论文写作所需的完整配置、实现细节、逐路结果、复现命令和结论边界见 [实验配置与论文写作参考](TDL_GNSS_EXPERIMENT_DETAILS.md)。
+
+监督训练使用独立入口 `python -m pedroam.training`，支持随机初始化的从头训练和预训练模型微调，数据划分、命令和输出说明见 [TRAINING.md](TRAINING.md)。下文的 `python -m pedroam` 流程和历史指标仍对应官方冻结模型。
+
+单场次按时间前 80% 训练、后 20% 测试使用 `python -m pedroam.temporal_training`，统一按所有手机的 UTC 时间切分，固定训练轮数后评估测试段。
 
 我们为 [TDL-GNSS](https://github.com/ebhrz/TDL-GNSS) 增加了 PedROAM 数据接口：读取手机 GNSS 观测和广播星历，完成预处理、定位和参考轨迹评分。默认运行数据目录中的全部记录，每个历元都参与处理。
 
